@@ -1,0 +1,15 @@
+docker build -t nstp_v4 .
+
+	- Build container.
+
+docker run -a stdout -a stderr -v /tmp:/tmp --rm nstp_v4 ./passwords.txt
+
+	- Run container with real time output.
+
+docker run -e RUST_LOG=debug -it --rm -v /tmp:/tmp gcr.io/netsec/assignments/03-mutual_authentication-tests /tmp/testsConfiguration.yaml
+
+	- Run tests with more detailed output.
+
+docker stop $(docker ps -a -q) && docker system prune
+
+	- Stop running containers and clean them up.

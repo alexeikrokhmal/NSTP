@@ -1,0 +1,28 @@
+# NSTP server configuration
+nstp_server:
+  ipv4_address: "127.0.0.1"     # IPv4 address of your NSTP server
+  ipv6_address: "::0"           # Or, an IPv6 address
+  port: 22300                   # NSTP server port
+
+# Status server configuration
+status_server:
+  ipv4_address: "127.0.0.1"     # IPv4 address of the status server
+  ipv6_address: "::0"           # Or, an IPv6 address
+  port: 22301                   # Status server port
+
+# Path to a `CertificateStore`
+trusted_certificate_store: "/data/trusted_certs.db"
+
+# Path to a `PinnedCertificateStore`
+pinned_certificate_store: "/data/pinned_certs.db"
+
+# Path to the client `Certificate`
+client_certificate: "/data/client.crt"
+
+# Path to the client `PrivateKey`
+client_private_key: "/data/client.key"
+
+# Or, valid user credentials
+user:
+  name: "root"
+  password: "letmein"
